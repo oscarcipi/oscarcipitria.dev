@@ -15,7 +15,7 @@ TailwindCSS
 content-collections for Markdown.
 
 
-## TODO
+## Todo
 
  Blog
  Books
