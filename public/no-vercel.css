@@ -1,0 +1,77 @@
+/* Target the Vercel badge with extreme specificity */
+a[href*="vercel.com"],
+[data-vercel-badge],
+[class*="vercel"]:not(svg):not(path),
+[class*="Vercel"]:not(svg):not(path),
+[id*="vercel"],
+[id*="Vercel"],
+div[style*="z-index: 2147483647"]:not(nav):not(header):not(button),
+body > div:last-child:not(nav):not(header):not(main):not(footer),
+body > div:last-of-type:not(nav):not(header):not(main):not(footer),
+body > div:nth-last-child(-n+3) > a[href*="vercel"],
+body > div > a[target="_blank"][rel="noopener noreferrer"][href*="vercel"],
+body > div > a[style*="position"][style*="bottom"][style*="left"],
+body > div > a[style*="position: fixed"][href*="vercel"],
+body > div > a[style*="z-index"][href*="vercel"],
+body > div > a:empty:not(button *),
+body > div:has(> a[href*="vercel"]:only-child),
+body > div:has(> a[target="_blank"][href*="vercel"]),
+body > div:has(> a:empty:not(button *)),
+body > div:has(> a[href*="vercel"]),
+body > div:has(> a[rel="noopener noreferrer"][href*="vercel"]) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Target specifically the bottom-left corner where the badge appears */
+body > div:last-child > a,
+body > div:nth-last-child(-n+5) > a {
+  display: none !important;
+}
+
+/* Target the specific badge style */
+body > div > a[style*="position: fixed"][style*="bottom"][style*="left"],
+body > div > a[style*="position:fixed"][style*="bottom"][style*="left"],
+body > div > a[style*="position: absolute"][style*="bottom"][style*="left"],
+body > div > a[style*="position:absolute"][style*="bottom"][style*="left"] {
+  display: none !important;
+}
+
+/* Hide any element with an N inside it in the bottom left corner */
+body > div > a:has(> span:only-child),
+body > div > a:has(> *:empty),
+body > div > a:has(> *:only-child),
+body > div > a:has(> span:first-child:last-child) {
+  display: none !important;
+}
+
+/* Hide elements with just the letter N */
+body *:not(input):not(textarea):not(select):not(option) {
+  visibility: visible;
+}
+
+body > div {
+  visibility: visible;
+}
+
+body > div:has(> a:only-child) {
+  display: none !important;
+}
+
+/* Specifically target Next.js Vercel badge */
+#__next-build-watcher,
+#__vercel-badge,
+[data-nextjs-badge],
+[data-next-badge] {
+  display: none !important;
+}

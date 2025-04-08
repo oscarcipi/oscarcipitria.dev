@@ -1,0 +1,22 @@
+/* Hide the Vercel deployment badge (the "N" button) */
+[data-vercel-badge] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Alternative selectors to ensure it's hidden */
+a[href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"] {
+  display: none !important;
+}
+
+/* Hide any element with vercel in the class name */
+[class*="vercel"] {
+  display: none !important;
+}
+
+/* Hide any element with the Vercel logo */
+[aria-label*="Vercel"] {
+  display: none !important;
+}
